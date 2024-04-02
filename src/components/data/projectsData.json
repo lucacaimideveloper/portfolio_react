@@ -9,14 +9,14 @@
   {
     "title": "Expense tracker",
     "imageSrc": "/images/expense-tracker-js.png",
-    "description": ["React", "JavaScript"],
+    "description": "React, JavaScript, Redux",
     "demo": "https://expense-tracker-lc.netlify.app/",
     "source": "https://github.com/lucacaimideveloper/expense-Tracker"
   },
   {
     "title": "To Do App",
     "imageSrc": "/images/todo-app-js.png",
-    "description": ["React", "CSS", "JavaScript"],
+    "description": "React, CSS, JavaScript",
     "demo": "https://to-do-lc.netlify.app/",
     "source": ""
   }
