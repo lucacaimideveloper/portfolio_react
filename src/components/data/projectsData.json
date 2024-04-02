@@ -1,21 +1,21 @@
 [
   {
     "title": "E-Commerce Udemy",
-    "imageSrc": "src/assets/images/e-comm-udemy.png",
+    "imageSrc": "/images/e-comm-udemy.png",
     "description": "React, Redux, Udemy Course Project ",
     "demo": "https://lc-e-commerce.netlify.app/",
     "source": "https://www.githunb.com"
   },
   {
     "title": "Expense tracker",
-    "imageSrc": "src/assets/images/expense-tracker-js.png",
+    "imageSrc": "/images/expense-tracker-js.png",
     "description": ["React", "JavaScript"],
     "demo": "https://expense-tracker-lc.netlify.app/",
     "source": "https://github.com/lucacaimideveloper/expense-Tracker"
   },
   {
     "title": "To Do App",
-    "imageSrc": "src/assets/images/todo-app-js.png",
+    "imageSrc": "/images/todo-app-js.png",
     "description": ["React", "CSS", "JavaScript"],
     "demo": "https://to-do-lc.netlify.app/",
     "source": ""
