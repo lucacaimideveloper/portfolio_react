@@ -1,19 +1,23 @@
 .home-page {
+  // display: flex;
+  top: 40%;
+
   .text-zone {
+    display: block;
     position: absolute;
     left: 10%;
     top: 50%;
     transform: translateY(-50%);
     width: 40%;
-    max-height: 90%;
+    max-height: 100%;
   }
   h1 {
+    display: inline-block;
     color: #fff;
     font-size: 53px;
     margin: 0;
     font-family: 'Coolvetica';
     font-weight: 400;
-
     &::before {
       content: '<h1>';
       font-family: 'La Belle Aurore';
@@ -34,6 +38,7 @@
       margin-left: 20px;
       animation: fadeIn 1s 1.7s backwards;
       opacity: 0.6;
+      // padding: 10px;
     }
     img {
       width: 32px;
@@ -75,14 +80,29 @@
 }
 @media screen and (max-width: 900px) {
   .home-page {
-    display: flex;
-    margin-top: 150px;
-    margin-left: 75px;
-    h1 {
-      span {
-        font-size: 40px;
-        letter-spacing: 1px;
+    // display: flex;
+    top: 30%;
+
+    .text-zone {
+      h1 {
+        display: inline-block;
+        font-size: 45px !important;
+        // line-height: 40px !important;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    .text-zone {
+      top: 80%;
+      left: 90%;
+    }
+    .text-zone h1 {
+      font-size: 39px !important;
+      line-height: 40px !important;
     }
   }
 }

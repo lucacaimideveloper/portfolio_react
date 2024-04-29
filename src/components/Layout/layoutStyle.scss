@@ -29,7 +29,7 @@
   min-height: 566px;
   position: absolute;
   opacity: 0;
-  top: 20%;
+  // top: 30%;
   margin: 0 auto;
   z-index: 1;
   transform-style: preserve-3d;
@@ -106,25 +106,3 @@
     }
   }
 }
-// @media screen and (max-width: 1200px) {
-//   .page {
-//     position: initial;
-//   }
-//   .container {
-//     position: initial;
-//     height: auto;
-//     min-height: auto;
-
-//     &.contact-page,
-//     &.about-page {
-//       .text-zone {
-//         position: initial;
-//         transform: none;
-//         width: 100%;
-//         display: block;
-//         padding: 20px;
-//         box-sizing: border-box;
-//       }
-//     }
-//   }
-// }
