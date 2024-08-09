@@ -5,12 +5,17 @@ import Loader from 'react-loaders'
 import AnimatedLetter from '../AnimatedLetter/AnimatedLetter'
 import projectsData from '../data/projectsData.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLink } from '@fortawesome/free-solid-svg-icons'
+import {
+  faLink,
+  faArrowLeft,
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons'
 
 const Project = () => {
   const [width, setWidth] = useState(0)
   const carousel = useRef()
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -21,10 +26,20 @@ const Project = () => {
   }, [])
 
   useEffect(() => {
-    //by console logging thos properties, you can understand the param where to stopthe carousel
-    // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth)
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
   }, [])
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === projectsData.length - 3 ? 0 : prevIndex + 1
+    )
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? projectsData.length - 3 : prevIndex - 1
+    )
+  }
 
   return (
     <>
@@ -39,44 +54,49 @@ const Project = () => {
           </h1>
 
           <p>
-            During my development path I had been creating varius projects,
-            using mainly JavaScript, React and Redux. <br></br> I have many more
+            During my development path I had been creating various projects,
+            using mainly JavaScript, React, and Redux. <br /> I have many more
             in preparation to keep practicing and improving my skills!
           </p>
         </div>
-        <motion.div
-          ref={carousel}
-          className="carousel"
-          whileTap={{ cursor: 'grabbing' }}
-        >
-          <motion.div
-            drag="x"
-            dragConstraints={{ right: 0, left: -width }}
-            className="inner-carousel"
-          >
-            {projectsData.map((projectsData, id) => {
-              return (
+        <div className="carousel-container">
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            className="arrow left"
+            onClick={prevSlide}
+          />
+          <motion.div ref={carousel} className="carousel">
+            <motion.div
+              className="inner-carousel"
+              initial={{ x: 0 }}
+              animate={{ x: -currentIndex * 33.33 + '%' }}
+              transition={{ duration: 0.5 }}
+            >
+              {projectsData.map((project, id) => (
                 <motion.div key={id} className="item">
-                  {/* <div className="projects"> */}
                   <img
-                    src={projectsData.imageSrc}
-                    alt={`Image of ${projectsData.title}`}
+                    src={project.imageSrc}
+                    alt={`Image of ${project.title}`}
                   />
-                  <div className="layer">
-                    <h3>{projectsData.title}</h3>
-                    <p>{projectsData.description}</p>
+                  <div className="fade-layer">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
                     <div>
-                      <a href={projectsData.demo}>
+                      <a href={project.demo}>
                         <FontAwesomeIcon icon={faLink} color="#022c43" />
                       </a>
                     </div>
                   </div>
-                  {/* </div> */}
                 </motion.div>
-              )
-            })}
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            className="arrow right"
+            onClick={nextSlide}
+          />
+        </div>
       </div>
       <Loader type="square-spin" />
     </>

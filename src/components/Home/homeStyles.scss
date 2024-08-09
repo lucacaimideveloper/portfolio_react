@@ -1,14 +1,14 @@
 .home-page {
   display: flex;
-  top: 40%;
+  margin-top: 10%;
+  margin-left: 10%;
 
   .text-zone {
     display: block;
     position: absolute;
-    left: 10%;
-    top: 50%;
+
     transform: translateY(-50%);
-    width: 40%;
+    width: 50%;
     max-height: 100%;
   }
   h1 {
@@ -79,6 +79,9 @@
   }
 }
 @media screen and (max-width: 900px) {
+  .container {
+    margin-top: 10%;
+  }
   .home-page {
     // display: flex;
     top: 30%;
