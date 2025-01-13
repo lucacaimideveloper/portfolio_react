@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import './project.style.scss'
 import Loader from 'react-loaders'
@@ -12,10 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const Project = () => {
-  const [width, setWidth] = useState(0)
-  const carousel = useRef()
   const [letterClass, setLetterClass] = useState('text-animate')
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -24,22 +21,6 @@ const Project = () => {
 
     return () => clearTimeout(timeoutId)
   }, [])
-
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
-  }, [])
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === projectsData.length - 3 ? 0 : prevIndex + 1
-    )
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? projectsData.length - 3 : prevIndex - 1
-    )
-  }
 
   return (
     <>
@@ -59,45 +40,25 @@ const Project = () => {
             in preparation to keep practicing and improving my skills!
           </p>
         </div>
-        <div className="carousel-container">
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            className="arrow left"
-            onClick={prevSlide}
-          />
-          <motion.div ref={carousel} className="carousel">
-            <motion.div
-              className="inner-carousel"
-              initial={{ x: 0 }}
-              animate={{ x: -currentIndex * 33.33 + '%' }}
-              transition={{ duration: 0.5 }}
-            >
-              {projectsData.map((project, id) => (
-                <motion.div key={id} className="item">
-                  <img
-                    src={project.imageSrc}
-                    alt={`Image of ${project.title}`}
-                  />
-                  <div className="fade-layer">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <div>
-                      <a href={project.demo}>
-                        <FontAwesomeIcon icon={faLink} color="#022c43" />
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className="arrow right"
-            onClick={nextSlide}
-          />
+
+        <div className="pf-box">
+          {projectsData.map((project, id) => (
+            <div key={id} className="work">
+              <img src={project.imageSrc} alt={`Image of ${project.title}`} />
+              <div className="layer">
+                <h3 className="script">{project.title}</h3>
+                <p className="script">{project.description}</p>
+                <div className="script">
+                  <a href={project.demo}>
+                    <FontAwesomeIcon icon={faLink} color="#022c43" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+
       <Loader type="square-spin" />
     </>
   )

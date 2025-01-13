@@ -19,5 +19,12 @@
     "description": "React, CSS, JavaScript",
     "demo": "https://to-do-lc.netlify.app/",
     "source": ""
+  },
+  {
+    "title": "Virtual Tour",
+    "imageSrc": "/images/figma-project.png",
+    "description": "UI/UX Design project",
+    "demo": "https://www.figma.com/proto/Z9DLl6DZHa3HjX8fDvBMfK/P1--Mobile-Virtual-Wedding-Tour?node-id=126-144&t=n6j3lBbuSfpByUYD-1",
+    "source": ""
   }
 ]
