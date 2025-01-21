@@ -1,12 +1,11 @@
 .home-page {
   display: flex;
-  margin-top: 10%;
-  margin-left: 10%;
 
   .text-zone {
     display: block;
     position: absolute;
-
+    margin-top: 10rem;
+    // margin-left: 10%;
     transform: translateY(-50%);
     width: 50%;
     max-height: 100%;
@@ -80,11 +79,12 @@
 }
 @media screen and (max-width: 900px) {
   .container {
-    margin-top: 10%;
+    // margin-top: 10%;
+    margin-top: 10rem;
   }
   .home-page {
     // display: flex;
-    top: 30%;
+    top: 10rem;
 
     .text-zone {
       h1 {
@@ -100,9 +100,12 @@
   .container {
     display: flex;
     .text-zone {
-      top: 80%;
-      left: 90%;
+      margin-top: 10rem;
+
+      // top: 150%;
+      // left: 90%;
     }
+
     .text-zone h1 {
       font-size: 39px !important;
       line-height: 40px !important;

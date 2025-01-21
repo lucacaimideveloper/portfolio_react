@@ -14,6 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/fiber": "^8.17.12",
     "animate.css": "^4.1.1",
     "axios": "^1.6.7",
     "framer-motion": "^11.0.5",
@@ -24,6 +25,7 @@
     "react-leaflet": "^4.2.1",
     "react-loaders": "^3.0.1",
     "react-router-dom": "^6.21.3",
+    "three": "^0.172.0",
     "trial": "^1.1.0"
   },
   "devDependencies": {
